@@ -23,5 +23,4 @@ function vuldb_api($apikey, $postarr, $details=0, $endpoint='https://vuldb.com/?
 	return $result;
 }
 
-
 ?>
