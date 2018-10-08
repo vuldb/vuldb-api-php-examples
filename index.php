@@ -2,8 +2,12 @@
 
 error_reporting(E_ALL & ~E_NOTICE);
 
-//You need to put your personal API key here
-$my_api_key = '[your_personal_api_key]';
+//You need to put your personal API key as 1st argument or hardcoded in here
+if(strlen($argv[1]) == 32){
+	$my_api_key = $argv[1];
+}else{
+	$my_api_key = '[your_personal_api_key]';
+}
 
 $DIRINCLUDES = '_inc/';
 require $DIRINCLUDES.'inc_api.php';
@@ -12,7 +16,7 @@ $api_request		= [ 'recent' => 3, 'details' => 0 ];		//Prepare request
 $api_response_json	= vuldb_api($my_api_key, $api_request);		//Send request and receive json
 $api_response_arr	= json_decode($api_response_json, TRUE);	//Convert json to php variable
 
-//Shot results
+//Show results
 
 echo "\n";
 echo 'API RESPONSE HEADER FIELDS'."\n";
