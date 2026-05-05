@@ -1,6 +1,6 @@
 <?php
 
-function vuldb_api($apikey, $postarr, $details=0, $endpoint='https://vuldb.com/?api'){
+function vuldb_api($apikey, $postarr, $details=0, $endpoint='https://vuldb.com/api'){
 	//Add API key
 	$postarr['apikey']	= $apikey;
 	$postarr['details']	= $details;
